@@ -1,3 +1,5 @@
+@import './ejemplo.sass';
+
 body {
     color: blue;
 }
