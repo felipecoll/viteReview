@@ -5,6 +5,15 @@ import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.js'
 
+const modules = import.meta.glob('./modules/*.js')
+
+console.log(modules)
+for (const path in modules) {
+  modules[path]().then((module) => {
+    module.load()
+  })
+}
+
 document.querySelector('#app').innerHTML = `
   <div>
     <a href="https://vite.dev" target="_blank">
